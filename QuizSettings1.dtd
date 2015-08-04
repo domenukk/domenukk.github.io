@@ -1,17 +1,17 @@
-<!ELEMENT QuizSettings (QuizName|WeitergabeBeiFehler|PunkteProFrage|Spieler|QuizFragen)+>
+<!ELEMENT QuizSettings (QuizName, WeitergabeBeiFehler, PunkteProFrage, Spieler, QuizFragen+)>
 <!ATTLIST QuizSettings
   xmlns:xsi CDATA #REQUIRED
   xmlns:xsd CDATA #REQUIRED>
 <!ELEMENT QuizName (#PCDATA)>
 <!ELEMENT WeitergabeBeiFehler (#PCDATA)>
 <!ELEMENT PunkteProFrage (#PCDATA)>
-<!ELEMENT Spieler (Namen)+>
+<!ELEMENT Spieler (Namen)>
 <!ELEMENT Namen (string)+>
 <!ELEMENT string (#PCDATA)>
 <!ELEMENT QuizFragen (Situation)+>
-<!ELEMENT Situation (Beschreibung|Fragen)+>
+<!ELEMENT Situation (Beschreibung, Fragen)>
 <!ELEMENT Beschreibung (#PCDATA)>
 <!ELEMENT Fragen (FrageGruppe)+>
-<!ELEMENT FrageGruppe (Frage|Antwort)+>
+<!ELEMENT FrageGruppe (Frage, Antwort)>
 <!ELEMENT Frage (#PCDATA)>
 <!ELEMENT Antwort (#PCDATA)>
