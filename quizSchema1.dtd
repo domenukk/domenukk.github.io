@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="QuizSettings" type="QuizSettingsType" />
+  <xsd:complexType name="QuizSettingsType">
+    <xsd:sequence>
+      <xsd:element name="QuizName" type="xsd:string" />
+      <xsd:element name="WeitergabeBeiFehler" type="xsd:int" />
+      <xsd:element name="PunkteProFrage" type="xsd:int" />
+      <xsd:element name="Spieler" type="SpielerType" />
+      <xsd:element name="QuizFragen" type="QuizFragenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="QuizFragenType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="Situation" type="SituationType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SituationType">
+    <xsd:sequence>
+      <xsd:element name="Beschreibung" type="xsd:string" />
+      <xsd:element name="Fragen" type="FragenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FragenType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="FrageGruppe" type="FrageGruppeType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FrageGruppeType">
+    <xsd:sequence>
+      <xsd:element name="Frage" type="xsd:string" />
+      <xsd:element name="Antwort" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SpielerType">
+    <xsd:sequence>
+      <xsd:element name="Namen" type="NamenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NamenType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="string" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
