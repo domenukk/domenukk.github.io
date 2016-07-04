@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>CamFingerTutorial</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" type="text/css" href="./bower_components/fullpage.js/dist/jquery.fullpage.min.css">
+
+    <link rel="stylesheet" type="text/css" href="./assets/checkmark.css">
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/jquery-color/jquery.color.js"></script>
+    <script src="./bower_components/fullpage.js/dist/jquery.fullpage.min.js"></script>
+
+
+    <script src="./bower_components/vivus/dist/vivus.min.js"></script>
+
+
+    <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
+    <script src="./bower_components/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="./assets/materialicons.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./tutorial.css">
+
+</head>
+
+<body>
+<!--div id="content" style="width: 100%; height: 100%; position: absolute;"-->
+<div id="fullpage"
+     style="pointer-events: visible; position: absolute; top:0; margin:0; left:0; width:100%; height:100%">
+    <div class="section active" id="section1">
+        <div class="slide active">
+            <div class="intro">
+                <h1>CamFinger</h1>
+                <p>Every Camera is unique.</p>
+                <p>This is due to production tolerances.</p>
+                </p>We call unique features <strong>Fingerprint</strong>.</p>
+            </div>
+
+        </div>
+        <div class="slide page2">
+            <div class="intro">
+                <h1>Before We Start</h1>
+                <p>This App needs the Camera permission.</p>
+                <p>Please grant it to continue.</p>
+            </div>
+        </div>
+        <div class="slide page3">
+            <div class="intro">
+                <h1>For Science!</h1>
+                <p>Your data helps a study</p>
+                <p>on authentication methods</p>
+                <p>by FAU Erlangen and Polimi Milano</p>
+            </div>
+        </div>
+        <div class="slide page4">
+            <div class="intro">
+                <h1>Learn the Fingerprint</h1>
+                <p>Take and upload 5 times 4 photos</p>
+                <p><strong>without personal information</strong>.</p>
+                <p>For example a cloudy sky. Also try to be on WiFi.</p>
+            </div>
+        </div>
+
+        <div class="slide page5">
+            <div class="intro">
+                <h1>Ready?</h1>
+                <p>Upload <strong>5x4</strong> photos</p>
+                <p>and receive your Camera Fingerprint</p>
+                <!-- Accent-colored raised button with ripple -->
+                <button style="margin-top: 20%; height: 50px; width: 65%;"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                        onclick="$.fn.fullpage.moveSlideRight();">
+                    Start
+                </button>
+            </div>
+        </div>
+
+        <div class="slide page5">
+        </div>
+    </div>
+</div>
+
+<div class="fixed">
+    <div class="icon icon--order-success"
+         style="height: 100%; margin:auto; text-align: center; position:relative;">
+        <img width="100%" height="100%" src="./assets/flatcam.svg"/>
+    </div>
+</div>
+
+<div class="fixed">
+    <div class="icon icon--order-success"
+         style="height: 100%; margin:auto; text-align: center; position:relative;">
+        <img width="auto" height="100%" src="./assets/shuttercolor.svg"/>
+    </div>
+</div>
+
+<div class="fixed">
+    <div class="icon icon--order-success"
+         style="height: 100%; margin:auto; text-align: center; position:relative;">
+        <img width="auto" height="100%" src="./assets/flask.svg"/>
+    </div>
+</div>
+<div class="fixed">
+    <div class="icon icon--order-success"
+         style="height: 100%; margin:auto; text-align: center; position:relative;">
+        <img width="100%" height="100%" src="./assets/fingerprint.svg"/>
+    </div>
+</div>
+<div class="fixed">
+    <div id="animateme" class="icon icon--order-success"
+         style="height: 100%; margin:auto; text-align: center; position:relative;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 72 72" preserveAspectRatio="xMaxYMax">
+            <g fill="none" stroke="#8EC343" stroke-width="2">
+                <circle cx="36" cy="36" r="35"
+                        style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                <path d="M17.417,37.778l9.93,9.909l25.444-25.393"
+                      style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
+            </g>
+        </svg>
+    </div>
+</div>
+<div class="fixed"></div>
+
+<div style="pointer-events: none; height:50%; width:100%; top:0; left:0; margin:0; display:table; position:absolute">
+    <div id="topelement" style="display: table-cell; vertical-align: middle; text-align: center;">
+        <div class="fixed"></div>
+    </div>
+    <!--/div-->
+</div>
+
+
+<div id="loading"
+     style="pointer-events: none; background-color: black; height:100%; width: 100%; top:0; left:0; position:absolute;">
+    <!-- this is only here to not show people the ugly fullpage initialization process. -->
+</div>
+
+
+<!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+<!-- script src="vendors/jquery.easings.min.js"></script -->
+
+
+<!-- This following line is only necessary in the case of using the plugin option `scrollOverflow:true` -->
+<!-- script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script -->
+
+<script src="./utils.js"></script>
+<script src="./tutorial.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Your Pattern</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
+    <script src="./bower_components/material-design-lite/material.min.js"></script>
+
+    <link rel="stylesheet" href="./assets/materialicons.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./utils.js"></script>
+</head>
+
+<body class="background">
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row" style="padding-top: 20px;"> <!--" padding-left: 20px;" -->
+            <!-- Title -->
+            <span class="mdl-layout-title">Your Fingerprint</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <!--nav class="mdl-navigation mdl-layout--large-screen-only">
+              <a class="mdl-navigation__link" href="">Link</a>
+              <a class="mdl-navigation__link" href="">Link</a>
+              <a class="mdl-navigation__link" href="">Link</a>
+              <a class="mdl-navigation__link" href="">Link</a>
+
+
+            </nav-->
+        </div>
+
+        <button style="position: fixed; color: white; top: 20px; left: 20px;"
+                class="mdl-button mdl-js-button mdl-button--icon" onclick="window.history.back()">
+            <i class="material-icons" >arrow_back</i>
+        </button>
+
+
+    </header>
+
+    <main class="mdl-layout__content background">
+        <div class="page-content">
+            <!-- Your content goes here -->
+
+            <div style="position: absolute; width: 100%; height: 95%; left: 0; top: 50%; transform: translate(0, -50%);">
+                <div style="width: 90%; height: 90%; margin: 5%; text-align: center;"
+                     class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div style="text-align: center; height: 100%" class="mdl-card__title mdl-card--expand">
+                        <div style="width:100%" class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                            <figure itemprop="associatedMedia"
+                                    style="text-align: center; margin: 0; width: 100%; height: 100%;" itemscope
+                                    itemtype="http://schema.org/ImageObject">
+                                <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg"
+                                   itemprop="contentUrl" data-size="1024x1024">
+                                    <img style="width: 100%; height: 100%;"
+                                         src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg"
+                                         itemprop="thumbnail"
+                                         alt="Image description"/>
+                                </a>
+                                <figcaption itemprop="caption description" style="text-align: center;">
+                                    <div class="mdl-card__supporting-text">
+                                        You can try how strong the pattern is in different gallery photos. (They will be
+                                        uplaoded to our server for this)
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                           onclick="native('compare')">
+                            Compare it
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+</div>
+
+
+<!--div style="position: absolute; text-align: center; top: 40px; left: 5px; right: 5px; bottom: 5px;"-->
+</body>
+
+</html>
