@@ -1,0 +1,693 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Messenger for Pokémon GO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="js/rs-plugin/css/settings.css">
+
+    <script type="text/javascript" src="js/modernizr.custom.32033.js"></script>
+
+    <!-- TODO: Build less.-->
+    <link rel="stylesheet/less" href="less/styles.less">
+    <link rel="stylesheet/less" href="less/freeze.less" title="colors">
+    <script src="js/less-1.7.0.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="pre-loader">
+    <div class="load-con">
+        <img src="img/messenger/logo.png" class="animated fadeInDown" alt="">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+</div>
+
+<header>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-lg"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/messenger/logo.png" alt="" class="logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">about</a>
+                    </li>
+                    <li><a href="#features">features</a>
+                    </li>
+                    <li><a href="#reviews">revs</a>
+                    </li>
+                    <li><a href="#screens">screns</a>
+                    </li>
+                    <li><a href="#team">team</a>
+                    </li>
+                    <li><a class="getApp" href="#getApp">get app</a>
+                    </li>
+                    <!-- TODO: This is too long. <li><a class="support" href="#support">info</a> </li-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-->
+    </nav>
+
+
+    <!--RevSlider-->
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul>
+                <!-- SLIDE  -->
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
+                    <!-- MAIN IMAGE -->
+                    <img src="img/transparent.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption lfl fadeout hidden-xs"
+                         data-x="left"
+                         data-y="bottom"
+                         data-hoffset="30"
+                         data-voffset="0"
+                         data-speed="500"
+                         data-start="700"
+                         data-easing="Power4.easeOut">
+                        <img src="img/messenger/phone2.png" style="width: auto; height: 600px;" alt="Screenshot">
+                    </div>
+
+                    <!-- on mobile screen (visible-xs)-->
+                    <div class="tp-caption lfl fadeout visible-xs"
+                         data-x="left"
+                         data-y="center"
+                         data-hoffset="300"
+                         data-voffset="0"
+                         data-speed="500"
+                         data-start="700"
+                         data-easing="Power4.easeOut">
+                        <img src="img/messenger/screenshots/Gyarados.png" style="width: 400px; height: auto"
+                             alt="Messenger for Pokémon GO Icon">
+                    </div>
+
+                    <div class="tp-caption large_white_light sft" data-x="550" data-y="center" data-hoffset="0"
+                         data-voffset="-160" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                        Messenger
+                    </div>
+                    <div class="tp-caption large_white_light sfr" data-x="890" data-y="center" data-hoffset="0"
+                         data-voffset="-160" data-speed="500" data-start="1400" data-easing="Power4.easeOut">
+                        for
+                    </div>
+                    <div class="tp-caption large_white_light sfb" data-x="550" data-y="center" data-hoffset="0"
+                         data-voffset="-80" data-speed="1000" data-start="1500" data-easing="Power4.easeOut">
+                        Pokémon GO
+                    </div>
+
+                    <div class="tp-caption sfb hidden-xs" data-x="550" data-y="center" data-hoffset="0"
+                         data-voffset="25" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
+                        <a href="#about" class="btn btn-primary inverse btn-lg">LEARN MORE</a>
+                    </div>
+                    <div class="tp-caption sfr hidden-xs" data-x="790" data-y="center" data-hoffset="0"
+                         data-voffset="25" data-speed="1500" data-start="1900" data-easing="Power4.easeOut">
+                        <a href="https://play.google.com/store/apps/details?id=com.shadoweinhorn.messenger"
+                           class="btn btn-default btn-lg">GET APP</a>
+                    </div>
+
+                </li>
+                <!-- SLIDE 2 -->
+                <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="img/transparent.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption lfb fadeout hidden-xs"
+                         data-x="center"
+                         data-y="bottom"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-speed="1000"
+                         data-start="700"
+                         data-easing="Power4.easeOut">
+                        <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-43-35.jpg"
+                             style="width: 240px; height: auto" alt="">
+                    </div>
+
+
+                    <div class="tp-caption large_white_light sft" data-x="center" data-y="250" data-hoffset="0"
+                         data-voffset="0" data-speed="1000" data-start="1400" data-easing="Power4.easeOut">
+                        Connect to nearby trainers in realtime!
+                    </div>
+
+
+                </li>
+
+                <!-- SLIDE 3 -->
+                <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="img/transparent.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption customin customout hidden-xs"
+                         data-x="right"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
+                         data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                         data-voffset="50"
+                         data-speed="1000"
+                         data-start="700"
+                         data-easing="Power4.easeOut">
+                        <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-44-23.jpg"
+                             style="width: 50%; height: auto" alt="">
+                    </div>
+
+                    <div class="tp-caption customin customout visible-xs"
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
+                         data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                         data-voffset="0"
+                         data-speed="1000"
+                         data-start="700"
+                         data-easing="Power4.easeOut">
+                        <img src="img/messenger/Appicon.png" alt="">
+                    </div>
+
+                    <div class="tp-caption lfb visible-xs" data-x="center" data-y="center" data-hoffset="0"
+                         data-voffset="400" data-speed="1000" data-start="1200" data-easing="Power4.easeOut">
+                        <a href="https://play.google.com/store/apps/details?id=com.shadoweinhorn.messenger"
+                           class="btn btn-primary inverse btn-lg">GET THE APP</a>
+                    </div>
+
+                    <!-- 80 voffset is around one text line at that size. -->
+                    <div class="tp-caption mediumlarge_light_white sfl hidden-xs" data-x="left" data-y="center"
+                         data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1000"
+                         data-easing="Power4.easeOut">
+                        Catch 'em all! Together.
+                    </div>
+                    <div class="tp-caption mediumlarge_light_white sft hidden-xs" data-x="left" data-y="center"
+                         data-hoffset="0" data-voffset="50" data-speed="1000" data-start="1200"
+                         data-easing="Power4.easeOut">
+                        A multiplayer game should not be played alone.
+                    </div>
+                    <div class="tp-caption small_light_white sfb hidden-xs" data-x="left" data-y="center"
+                         data-hoffset="0" data-voffset="130" data-speed="1000" data-start="1600"
+                         data-easing="Power4.easeOut">
+                        <p>Experience the advantage of gym fights, collective lures and pokémon spottings today<br>Make
+                            new friends and connect, using the most used Pokémon GO Messenger App currently
+                            avaliable!<br>Download today. It's 100% FREE, no strings attached!</p>
+                    </div>
+
+                    <div class="tp-caption lfl hidden-xs" data-x="left" data-y="center" data-hoffset="0"
+                         data-voffset="210" data-speed="1000" data-start="1800" data-easing="Power4.easeOut">
+                        <a href="https://play.google.com/store/apps/details?id=com.shadoweinhorn.messenger"
+                           class="btn btn-primary inverse btn-lg">Download the App for Free.</a>
+                    </div>
+
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+</header>
+
+
+<div class="wrapper">
+
+
+    <section id="about">
+        <div class="container">
+
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1>What it does</h1>
+                <div class="divider"></div>
+                <p>Messenger for Pokémon GO helps you to commuicate with trainers in your area.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="about-item scrollpoint sp-effect5">
+                        <i class="fa fa-mobile fa-2x"></i>
+                        <h3>Seamless Experience</h3>
+                        <p>Chat with nearby trainers without ever leaving the game (Android only :/)!</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="about-item scrollpoint sp-effect5">
+                        <i class="fa fa-users fa-2x"></i>
+                        <h3>Highly Social</h3>
+                        <p>It lets you chat. What else would you ever need from a messenger? This one event lets you
+                            find new players in the area, create and join groups and so much more!</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="about-item scrollpoint sp-effect1">
+                        <i class="fa fa-sliders fa-2x"></i>
+                        <h3>Super Easy Setup</h3>
+                        <p>Just download, choose a name and be ready to go!</p>
+                    </div>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.shadoweinhorn.messenger">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="about-item scrollpoint sp-effect2">
+                            <i class="fa fa-download fa-2x"></i>
+                            <h3>Get it now!</h3>
+                            <p>The download section is waiting for you.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1>Features</h1>
+                <div class="divider"></div>
+                <p>What else can we tell you? It's a messenger. Download it already!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 scrollpoint sp-effect1">
+                    <div class="media media-left feature">
+                        <a class="pull-right" href="#">
+                            <i class="fa fa-envelope fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Message others directly</h3>
+                            Start Groupchats with other players by long-clicking their name.
+                        </div>
+                    </div>
+                    <div class="media media-left feature">
+                        <a class="pull-right" href="#">
+                            <i class="fa fa-users fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Group Chats</h3>
+                            Create #groups an chat with other trainers about Pokétopics
+                        </div>
+                    </div>
+                    <div class="media media-left feature">
+                        <a class="pull-right" href="#">
+                            <i class="fa fa-comments fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Live Chat Messages</h3>
+                            Talk talk talk to other trainers. For real.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-49-20.jpg"
+                         class="img-responsive scrollpoint sp-effect5" alt="">
+                </div>
+                <div class="col-md-4 col-sm-4 scrollpoint sp-effect2">
+                    <div class="media feature">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-map-marker fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">Location Sharing</h3>
+                            Inform other players about the location of mons and lures!
+                        </div>
+                    </div>
+                    <div class="media feature">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-compass fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">See distance to others</h3>
+                            We never share your <strong>precise</strong> location, however you can see which people are
+                            close to you.
+                        </div>
+                    </div>
+                    <div class="media active feature">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-plus fa-2x"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3 class="media-heading">And much more!</h3>
+                            You know you want it.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <div class="container">
+            <div class="section-heading inverse scrollpoint sp-effect3">
+                <h1>Reviews</h1>
+                <div class="divider"></div>
+                <p>Read What's The People Are Saying About Us</p>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-push-1 scrollpoint sp-effect3">
+                    <div class="review-filtering">
+                        <div class="review">
+                            <img src="img/messenger/Screen%20Shot%202016-07-22%20at%203.08.27%20AM.png">
+                        </div>
+                        <div class="review rollitin">
+                            <img src="img/messenger/Screen%20Shot%202016-07-22%20at%203.09.55%20AM.png">
+                        </div>
+                        <div class="review rollitin">
+                            <img src="img/messenger/Screen%20Shot%202016-07-22%20at%203.14.17%20AM.png">
+                        </div>
+                        <div class="review rollitin">
+                            <img src="img/messenger/Screen%20Shot%202016-07-22%20at%203.15.49%20AM.png">
+                        </div>
+                        <div class="review rollitin">
+                            <img src="img/messenger/Screen%20Shot%202016-07-22%20at%203.19.11%20AM.png">
+                        </div>
+                        <div class="review rollitin">
+                            <img src="img/messenger/Screen%20Shot%202016-07-22%20at%203.20.22%20AM.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screens">
+        <div class="container">
+
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1>Screens</h1>
+                <div class="divider"></div>
+                <p>Chat to nearby trainers and in groups, globally!</p>
+            </div>
+
+            <!-- This could filter screenshots if we wanted.
+             <div class="filter scrollpoint sp-effect3">
+                <a href="javascript:void(0)" class="button js-filter-all active">All Screens</a>
+                <a href="javascript:void(0)" class="button js-filter-one">User Access</a>
+                <a href="javascript:void(0)" class="button js-filter-two">Social Network</a>
+                <a href="javascript:void(0)" class="button js-filter-three">Media Players</a>
+            </div-->
+            <div class="slider filtering scrollpoint sp-effect5">
+                <div class="one">
+                    <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-49-20.jpg"
+                         alt="Valor Teamchat Screenshot">
+                    <h4>Valor Teamchat</h4>
+                </div>
+                <div class="two">
+                    <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-44-23.jpg"
+                         alt="Share Location Screenshot">
+                    <h4>Share Location</h4>
+                </div>
+                <div class="three">
+                    <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-43-17.jpg"
+                         alt="Superquick setup screenshot">
+                    <h4>Superquick Setup!</h4>
+                </div>
+                <div class="one">
+                    <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-43-35.jpg"
+                         alt="Floating foo screenshot">
+                    <h4>It floats :)</h4>
+                </div>
+                <div class="one">
+                    <img src="img/messenger/screenshots/Screenshot_2016-07-29-19-43-49.jpg"
+                         alt="More floating screenshots">
+                    <h4>Even the team chat can float.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1>Team</h1>
+                <div class="divider"></div>
+                <p>Meet the team behind the #1 Messenger for Pokémon GO on Android</p>
+            </div>
+            <div class="row left-image">
+                <div class="image col-md-8 col-md-offset-2 scrollpoint sp-effect2">
+                    <img src="img/messenger/Alex_klein.png" alt="Picture of Alex"/>
+                </div>
+                <div class="text">
+                    <h2>Alex</h2>
+                    <h3>Developer</h3>
+                    <p>Hey, my name is Alexander Popp and I am currently finishing my master in International
+                        Information
+                        Systems.
+                        I worked at various companies like Adidas or Flexus and started a lot of different projects by
+                        myself.
+                        Next to writing Android apps, I am passionate about React, Node.js and Spring.
+                        In my free time I am climbing mountains or running along the Pegnitz.</p>
+                </div>
+            </div>
+            <div class="row right-image">
+                <div class="image col-md-8 col-md-offset-2 scrollpoint sp-effect2">
+                    <img src="img/messenger/Andi_small.png" alt="Picture of Andi"/>
+                </div>
+                <div class="text">
+                    <h2>Andreas</h2>
+                    <h3>Designer</h3>
+
+                    <p>Hi, my name is Andreas Schwarz and designing is what I do. Currently I am working for Adidas as a
+                        UI/UX designer and before that I studied graphic design and illustration in Nuremberg.
+                        Take a look at my <a href="https://www.behance.net/AndreasSchwarz">Portfolio</a> to see more of
+                        my
+                        work. Next to design, my passion lies in creating music and skateboarding.</p>
+                </div>
+            </div>
+            <div class="row left-image">
+                <div class="image col-md-8 col-md-offset-2 scrollpoint sp-effect2">
+                    <img src="img/messenger/Dommi_klein.png" alt="Picture of Dominik"/>
+                </div>
+                <div class="text">
+                    <h2>Dominik</h2>
+                    <h3>Developer</h3>
+                    <p>Hey, I'm doing my master's degree in Computer Science at FAU Erlangen-Nürnberg,
+                        however right now I'm writing my thesis at Politechnico di Milano.
+                        My focus lies on mobile security and last year I researched embedded device security at SecLab
+                        UC
+                        Santa Barbara.
+                        I was awarded with the CAST-Förderpreis for best bachelor's thesis in the field of IT-Security
+                        and
+                        concurrently to the bachelor,
+                        as part of a combined study program, I trained with DATEV eG, a large German software company.
+                        I have years of experience on mobile and security developement projects, did consulting and
+                        pentesting and worked for various companies.
+                        In my spare-time I travel, hack on projects like this and participate in CTFs.</p>
+                </div>
+            </div>
+            <div class="row right-image">
+                <div class="image col-md-8 col-md-offset-2 scrollpoint sp-effect2">
+                    <img src="img/messenger/long_small.png" alt="Picture of Huy-Long"/>
+                </div>
+                <div class="text">
+                    <h2>Huy-Long</h2>
+                    <h3>Developer</h3>
+                    <p>Huy-Long Nguyen is currently pursuing his master degree in International Information Systems at
+                        University of Erlangen-Nuremberg (Germany). He loves tech stuff and has been developing mobile
+                        applications since the beginning of his bachelor degree. He worked with several companies like
+                        Adidas AG or Bit Kitchen Inc. on exciting Android and iOS projects. He is CTO and Co-founder of
+                        Good
+                        Life Technologies Sdn Bhd, a mobile app company focused on the health and beauty sector. In his
+                        free
+                        time he likes to play squash, table tennis or work on other start up ideas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="getApp">
+        <div class="container-fluid">
+            <div class="section-heading inverse scrollpoint sp-effect3">
+                <h1>Get GO Messenger</h1>
+                <div class="divider"></div>
+                <p>Apple iOS coming soon.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hanging-phone scrollpoint sp-effect2 hidden-xs">
+                        <img src="img/freeze/freeze-angled2.png" alt="">
+                    </div>
+                    <div class="platforms">
+                        <a href="https://play.google.com/store/apps/details?id=com.shadoweinhorn.messenger"
+                           class="btn btn-primary inverse scrollpoint sp-effect1">
+                            <i class="fa fa-android fa-3x pull-left"></i>
+                            <span>Download for</span><br>
+                            <b>Android</b>
+                        </a>
+                        <!-- TODO: Release on apple :D
+                             <a href="#" class="btn btn-primary inverse scrollpoint sp-effect2">
+                                 <i class="fa fa-apple fa-3x pull-left"></i>
+                                 <span>Download for</span><br>
+                                 <b>Apple IOS</b>
+                             </a> -->
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="support" class="doublediagonal">
+        <div class="container">
+            <div class="section-heading scrollpoint sp-effect3">
+                <h1>Support</h1>
+                <div class="divider"></div>
+                <p>For info, support and ideas, mail us!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <!-- div-- class="col-md-8 col-sm-8 scrollpoint sp-effect1">
+                            <form role="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </form>
+                        </div-->
+                        <div class="col-md-4 col-sm-4 contact-details scrollpoint sp-effect2">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-envelope fa-2x"></i>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        <a href="mailto:support@oleose.com">info@shadoweinhorn.com</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-map-marker fa-2x"></i>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Nuremberg, Germany</h4>
+                                </div>
+                            </div>
+
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-phone fa-2x"></i>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">+1 234 567890</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="#" class="scrollpoint sp-effect3">
+                <img src="img/messenger/logo.png" alt="" class="logo">
+            </a>
+            <div class="social">
+                <a href="https://twitter.com/shadoweinhorn" class="scrollpoint sp-effect3"><i
+                        class="fa fa-twitter fa-lg"></i></a>
+                <!--a href="#" class="scrollpoint sp-effect3"><i class="fa fa-google-plus fa-lg"></i></a-->
+                <a href="https://facebook.com/shadoweinhorn" class="scrollpoint sp-effect3"><i
+                        class="fa fa-facebook fa-lg"></i></a>
+            </div>
+            <div class="rights">
+                <!-- js will edit this-->
+                <p>Copyright &copy; ShadowEinhorn</p>
+            </div>
+
+
+        </div>
+    </footer>
+
+
+</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/placeholdem.min.js"></script>
+<script src="js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        appMaster.preLoader();
+
+        $(".rights").html("<p>Copyright &copy; " + new Date().getFullYear() + " ShadowEinhron</p>");
+
+    });
+</script>
+
+<script>
+    //goo.gl analytics
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-81465297-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
