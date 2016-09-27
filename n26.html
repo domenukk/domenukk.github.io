@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Open App</title>
+
+    <!--
+    URL Params:
+
+    customSchemeURL: Your custom scheme app
+    storeURL: Your app url at App Store or Google Play
+
+    Any aditional parameter will be passed as param to the app url
+    -->
+    <script language="javascript">
+        function open() {
+            var url = "https://dmnk.co";
+            var appUrl = "number26://main?tutorial=" + encodeURIComponent(url);
+
+            document.location.href = url ;
+            console.log("Opening URL: " + url) ;
+        }
+    </script>
+</head>
+<body onLoad="open()" style="background: #00A4E6">
+</body>
+</html>
