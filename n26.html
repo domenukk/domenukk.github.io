@@ -18,7 +18,9 @@
             var appUrl = "number26://main?tutorial=" + encodeURIComponent(url);
 
             document.location.href = appUrl;
+
             console.log("Opening URL: " + appUrl) ;
+            document.location.assign(appUrl);
         }
     </script>
 </head>
