@@ -77,12 +77,13 @@ function setImageUrl(url) {
     $patternLarge.find("#patternPreview").attr("src", url);
     $("#waitingText").hide();
     $("#afterWaiting").show();
+    return "success"
 }
 
 
 function setPhotoCount(numDone, numTotal) {
-    if (numDone >= numTotal) {
-        $("#waitingText").innerHTML = "All uploads done. Waiting for server to process. This will take a few more minutes, depending on the server load."
+    if (parseInt(numDone, 10) >= parseInt(numTotal, 10)) {
+        $("#waitingText").html("All uploads done. Waiting for server to process. This will take a few more minutes, depending on the server load.");
     } else {
         $("#numdone").html(numDone);
         document.querySelector('.mdl-js-progress').MaterialProgress.setProgress((numDone / numTotal) * 100);
