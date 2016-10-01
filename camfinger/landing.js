@@ -29,6 +29,11 @@ function onNavigateCallback(pageIndex) {
 }
 
 $(document).ready(function () {
+    var $bottom = $("#bottom");
+    $bottom.hide();
+    setTimeout(function () {
+        $bottom.fadeIn(750);
+    }, 4000);
 
 
     var $section = $(".section");
