@@ -85,6 +85,9 @@ $(document).ready(function () {
             console.log("loaded ", anchorLink, index);
             
             // hide the main foo :)
+            if (index > 3) {
+                $bottom.fadeIn(750);
+            }
 
         },
         //afterRender: function(){},
@@ -92,6 +95,7 @@ $(document).ready(function () {
         afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
             //Animate the checkmark after slide
             $($fixeds[slideIndex]).find("#animateme").addClass("svg");
+
 
         },
         onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
