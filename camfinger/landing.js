@@ -28,6 +28,14 @@ function onNavigateCallback(pageIndex) {
 
 }
 
+function navigateToAppStore() {
+   top.location.href = "https://itunes.apple.com/us/app/camfinger/id1159564814?l=de&ls=1&mt=8";
+}
+
+function navigateToPlayStore() {
+    top.location.href = 'https://play.google.com/store/apps/details?id=de.fau.camfinger&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1';
+}
+
 $(document).ready(function () {
     var $bottom = $("#bottom");
     $bottom.hide();
@@ -35,14 +43,16 @@ $(document).ready(function () {
         $bottom.fadeIn(750);
     }, 4000);
 
-    $("#ios").click(function () {
-        top.location.href = "https://itunes.apple.com/us/app/camfinger/id1159564814?l=de&ls=1&mt=8";
-    });
+    $("#ios").click(navigateToAppStore);
 
-    $("#android").click(function () {
-        top.location.href = 'https://play.google.com/store/apps/details?id=de.fau.camfinger&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1';
-    });
+    $("#android").click(navigateToPlayStore);
 
+    if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+        navigateToPlayStore();
+    }
+    if (navigator.userAgent.toLowerCase().indexOf("ios") > -1) {
+        navigateToAppStore();
+    }
 
     var $section = $(".section");
 
