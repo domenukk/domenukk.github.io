@@ -48,7 +48,11 @@ $(document).ready(function () {
     $("#android").click(navigateToPlayStore);
 
     if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
-        navigateToPlayStore();
+        try {
+            navigateToPlayStore();
+        } catch (ex) {
+            console.log("nav didn't work");
+        }
     }
     if (navigator.userAgent.toLowerCase().indexOf("ios") > -1) {
         navigateToAppStore();
