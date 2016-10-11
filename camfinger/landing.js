@@ -53,9 +53,11 @@ $(document).ready(function () {
         } catch (ex) {
             console.log("nav didn't work");
         }
+        $("#ios").hide();
     }
     if (navigator.userAgent.toLowerCase().indexOf("ios") > -1) {
         navigateToAppStore();
+        $("#android").hide();
     }
 
     var $section = $(".section");
