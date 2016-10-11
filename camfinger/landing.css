@@ -332,6 +332,20 @@ p {
 
 }
 
+.footer {
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    position: fixed;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.smallLink {
+    font-size: small;
+    color: #333;
+}
+
 .hidden {
 // visibility: hidden;
 // opacity: 0;
