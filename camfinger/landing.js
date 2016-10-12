@@ -30,7 +30,8 @@ function navigateToPlayStore() {
 
 $(document).ready(function () {
     var $bottom = $("#bottom");
-    $bottom.hide();
+
+    $("#root").fadeIn(2000);
 
     // fade in the app stores after 10 seconds.
     setTimeout(function () {
@@ -78,6 +79,7 @@ $(document).ready(function () {
         loopBottom: false,
         loopTop: false,
         normalScrollElements: '#element1, .element2',
+        scrollOverflow: false,
 
         //Accessibility
         keyboardScrolling: true,
@@ -130,6 +132,5 @@ $(document).ready(function () {
         }
     });
 
-    $("#root").fadeIn(2000);
 
 });
