@@ -78,7 +78,6 @@ $(document).ready(function () {
         loopBottom: false,
         loopTop: false,
         normalScrollElements: '#element1, .element2',
-        scrollOverflow: true,
 
         //Accessibility
         keyboardScrolling: true,
