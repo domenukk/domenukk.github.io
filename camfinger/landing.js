@@ -44,7 +44,7 @@ $(document).ready(function () {
 
     if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
         try {
-            navigateToPlayStore();
+            //navigateToPlayStore();
         } catch (ex) {
             console.error("nav didn't work");
         }
