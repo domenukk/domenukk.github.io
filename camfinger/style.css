@@ -28,6 +28,10 @@ body {
   -webkit-touch-callout: none;
 }
 
+a {
+    font-weight: 300;
+}
+
 
 .mdl-color--primary {
     background-color: rgb(63,81,181) !important; }
