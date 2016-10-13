@@ -47,7 +47,7 @@ var gittags = require( "git-tags" ).get( function( error, tags ) {
 		var parts = line.split( ":" );
 		var component = "";
 		var message;
-		var commits = line.match( /\{\{([A-Za-z0-9 ]){0,99}\}\}/ )
+		var commits = line.match( /\{\{([A-Za-z0-9 ]){0,99}\}\}/ );
 
 		if ( parts.length > 1 && parts[ 0 ].length <= 20 ) {
 			component = parts[ 0 ];

@@ -4,149 +4,136 @@
 
 <head>
     <title>CamFingerTutorial</title>
-
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Your phone has a unique id you never knew about. This app makes it visible."/>
+    <meta property="og:title" content="CamFinger - learn your fingerprint and help science."/>
+    <meta property="og:description"
+          content="Your phone has a unique id you never knew about. This app makes it visible."/>
+    <meta name="twitter:title" content="CamFinger - learn your fingerprint and help science.">
+    <meta name="twitter:description"
+          content="Your phone has a unique id you never knew about. This app makes it visible.">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ccc">
+    <meta name="theme-color" content="#ccc">
 
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
     <link rel="stylesheet" type="text/css" href="./bower_components/fullpage.js/dist/jquery.fullpage.min.css">
-
     <link rel="stylesheet" type="text/css" href="./assets/checkmark.css">
-    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="./bower_components/jquery-color/jquery.color.js"></script>
-    <script src="./bower_components/fullpage.js/dist/jquery.fullpage.min.js"></script>
-
-
-    <script src="./bower_components/vivus/dist/vivus.min.js"></script>
-
-
     <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
-    <script src="./bower_components/material-design-lite/material.min.js"></script>
     <link rel="stylesheet" href="./assets/materialicons.css">
-
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" type="text/css" href="./landing.css">
 
 </head>
 
-<body style="background-color: black">
+<body style="background-color: black;">
 <div id="root" style="display: none">
-<!--div id="content" style="width: 100%; height: 100%; position: absolute;"-->
-<div id="fullpage">
-    <div class="section active" id="section0">
-        <div class="content">
-            <div class="intro">
-                <h1>Welcome to CamFinger</h1>
-                <p>Your phone has a unique id you didn't know about.</p>
-                <p>This is the app to see it.</p>
+    <div id="fullpage">
+        <div class="section active" id="section0">
+            <div class="content">
+                <div class="intro">
+                    <h1>Welcome to CamFinger</h1>
+                    <p>Your phone has a unique id you never knew about.</p>
+                    <p>This is the app to see it. Scroll to continue.</p>
+                    <!--p><a id="downloadLink" style="color: #a8c0b8;">(scroll to read or click to download)</a> </p><-->
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="content">
+                <div class="intro">
+                    <h1>Run the App for Science!</h1>
+                    <p>Your data helps a study</p>
+                    <p>on authentication methods</p>
+                    <p>by <a href="https://www1.cs.fau.de">FAU Erlangen-Nürnberg</a> and <a href="http://necst.it">Politechnico di Milano</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="content">
+                <div class="intro">
+                    <h1>CamFinger</h1>
+                    <p>Every Camera is unique.</p>
+                    <p>This is due to production tolerances.</p>
+                    <p>We call unique features <strong>Fingerprint</strong>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="content">
+                <div class="intro">
+                    <h1>Learn the Fingerprint</h1>
+                    <p>Download the App from the Store now.</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="section" id="section2">
-        <div class="content">
-            <div class="intro">
-                <h1>Run the App for Science!</h1>
-                <p>Your data helps a study</p>
-                <p>on authentication methods</p>
-                <p>by FAU Erlangen and Polimi Milano</p>
-            </div>
+
+    <div class="fixed">
+        <div class="icon icon--order-success fixedimage">
+            <img width="100%" height="100%" src="./assets/shuttercolor.svg"/>
         </div>
     </div>
-    <div class="section" id="section1">
-        <div class="content">
-            <div class="intro">
-                <h1>CamFinger</h1>
-                <p>Every Camera is unique.</p>
-                <p>This is due to production tolerances.</p>
-                <p>We call unique features <strong>Fingerprint</strong>.</p>
-            </div>
+
+    <div class="fixed">
+        <div class="icon icon--order-success fixedimage">
+            <img width="auto" height="100%" src="./assets/flatcam.svg"/>
         </div>
     </div>
-    <div class="section" id="section3">
-        <div class="content">
-            <div class="intro">
-                <h1>Learn the Fingerprint</h1>
-                <p>Download the App from the Store now.</p>
-            </div>
+
+    <div class="fixed">
+        <div class="icon icon--order-success fixedimage">
+            <img width="auto" height="100%" src="./assets/flask.svg"/>
         </div>
     </div>
-</div>
-
-<div class="fixed">
-    <div class="icon icon--order-success"
-         style="height: 100%; margin:auto; text-align: center; position:relative;">
-        <img width="100%" height="100%" src="./assets/shuttercolor.svg"/>
+    <div class="fixed">
+        <div class="icon icon--order-success fixedimage">
+            <img width="auto" height="100%" src="./assets/fingerprint.svg"/>
+        </div>
     </div>
-</div>
-
-<div class="fixed">
-    <div class="icon icon--order-success"
-         style="height: 100%; margin:auto; text-align: center; position:relative;">
-        <img width="auto" height="100%" src="./assets/flatcam.svg"/>
+    <div class="fixed">
+        <div id="animateme" class="icon icon--order-success fixedimage">
+            <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 72 72" preserveAspectRatio="xMaxYMax">
+                <g fill="none" stroke="#8EC343" stroke-width="2">
+                    <circle cx="36" cy="36" r="35"
+                            style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                    <path d="M17.417,37.778l9.93,9.909l25.444-25.393"
+                          style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
+                </g>
+            </svg>
+        </div>
     </div>
-</div>
+    <div class="fixed"></div>
 
-<div class="fixed">
-    <div class="icon icon--order-success"
-         style="height: 100%; margin:auto; text-align: center; position:relative;">
-        <img width="auto" height="100%" src="./assets/flask.svg"/>
+    <div class="fixedouter">
+        <div id="topelement">
+            <div class="fixed"></div>
+        </div>
+        <!--/div-->
     </div>
-</div>
-<div class="fixed">
-    <div class="icon icon--order-success"
-         style="height: 100%; margin:auto; text-align: center; position:relative;">
-        <img width="auto" height="100%" src="./assets/fingerprint.svg"/>
+
+    <div id="bottom" class="fixedBottom" style="display: none">
+        <img id="android" alt='Get it on Google Play'
+             src='assets/playstore.svg' class="storebutton"/>
+        <img id="ios" class="storebutton" src="./assets/appstore.svg"/>
     </div>
-</div>
-<div class="fixed">
-    <div id="animateme" class="icon icon--order-success"
-         style="height: 100%; margin:auto; text-align: center; position:relative;">
-        <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 72 72" preserveAspectRatio="xMaxYMax">
-            <g fill="none" stroke="#8EC343" stroke-width="2">
-                <circle cx="36" cy="36" r="35"
-                        style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
-                <path d="M17.417,37.778l9.93,9.909l25.444-25.393"
-                      style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
-            </g>
-        </svg>
+
+    <div id="footer" class="footer">
+        <p><a class="smallLink" href="./info.html#privacy">Privacy|</a><a class="smallLink" href="./info.html#contact">Contact</a>
+        </p>
     </div>
+
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/jquery-color/jquery.color.js"></script>
+    <script src="./bower_components/fullpage.js/dist/jquery.fullpage.min.js"></script>
+    <script src="./bower_components/vivus/dist/vivus.min.js"></script>
+    <script src="./bower_components/material-design-lite/material.min.js"></script>
+    <script src="./utils.js"></script>
+    <script src="./landing.js"></script>
 </div>
-<div class="fixed"></div>
-
-
-<div style="pointer-events: none; height:50%; width:100%; top:0; left:0; margin:0; display:table; position:absolute">
-    <div id="topelement" style="display: table-cell; vertical-align: middle; text-align: center;">
-        <div class="fixed"></div>
-    </div>
-    <!--/div-->
-</div>
-
-<div id="bottom" class="fixedBottom" style="display: none">
-    <img id="android" style="cursor:pointer;" width="240" height="70" alt='Get it on Google Play'
-         src='assets/playstore.svg'/>
-    <img id="ios" style="cursor:pointer;" width="240" height="70" src="./assets/appstore.svg"/>
-</div>
-
-<div id="footer" class="footer">
-    <p><a class="smallLink" href="./info.html#privacy">Privacy|</a><a class="smallLink" href="./info.html#contact">Contact</a></p>
-</div>
-
-<div id="loading"
-     style="pointer-events: none; background-color: black; height:100%; width: 100%; top:0; left:0; position:absolute;">
-    <!-- this is only here to not show people the ugly fullpage initialization process. -->
-</div>
-
-
-<!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
-<!-- script src="vendors/jquery.easings.min.js"></script -->
-
-
-<!-- This following line is only necessary in the case of using the plugin option `scrollOverflow:true` -->
-<!-- script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script -->
-
-<script src="./utils.js"></script>
-<script src="./landing.js"></script>
-<div>
 </body>
-
 </html>

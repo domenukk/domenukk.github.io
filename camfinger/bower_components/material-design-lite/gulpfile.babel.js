@@ -108,7 +108,7 @@ gulp.task('lint', () => {
     .pipe($.jscs.reporter())
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')))
     .pipe($.if(!browserSync.active, $.jscs.reporter('fail')));
-});
+})
 
 // ***** Production build tasks ****** //
 
@@ -123,7 +123,7 @@ gulp.task('images', () => {
     })))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}));
-});
+})
 
 // Compile and Automatically Prefix Stylesheets (dev)
 gulp.task('styles:dev', () => {
@@ -138,7 +138,7 @@ gulp.task('styles:dev', () => {
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     .pipe($.size({title: 'styles'}));
-});
+})
 
 // Compile and Automatically Prefix Stylesheet Templates (production)
 gulp.task('styletemplates', () => {
@@ -163,7 +163,7 @@ gulp.task('styletemplates', () => {
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
-});
+})
 
 // Compile and Automatically Prefix Stylesheets (production)
 gulp.task('styles', () => {
@@ -189,7 +189,7 @@ gulp.task('styles', () => {
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
-});
+})
 
 // Only generate CSS styles for the MDL grid
 gulp.task('styles-grid', () => {
@@ -210,7 +210,7 @@ gulp.task('styles-grid', () => {
     .pipe($.header(banner, {pkg}))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles-grid'}));
-});
+})
 
 // Build with Google's Closure Compiler, requires Java 1.7+ installed.
 gulp.task('closure', () => {
@@ -228,7 +228,7 @@ gulp.task('closure', () => {
       }
     }))
     .pipe(gulp.dest('./dist'));
-});
+})
 
 // Concatenate And Minify JavaScript
 gulp.task('scripts', ['lint'], () => {
@@ -250,10 +250,11 @@ gulp.task('scripts', ['lint'], () => {
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'scripts'}));
-});
+})
 
 // Clean Output Directory
-gulp.task('clean', () => del(['dist', '.publish']));
+gulp.task('clean', () = > del(['dist', '.publish'])
+)
 
 // Copy package manger and LICENSE files to dist
 gulp.task('metadata', () => {
@@ -263,7 +264,7 @@ gulp.task('metadata', () => {
       'LICENSE'
     ])
     .pipe(gulp.dest('dist'));
-});
+})
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], cb => {
@@ -272,7 +273,7 @@ gulp.task('default', ['clean'], cb => {
     ['scripts'],
     ['mocha'],
     cb);
-});
+})
 
 // Build production files and microsite
 gulp.task('all', ['clean'], cb => {
@@ -285,15 +286,14 @@ gulp.task('all', ['clean'], cb => {
      'templates', 'images', 'metadata'],
     ['zip'],
     cb);
-});
+})
 
 // ***** Testing tasks ***** //
 
 gulp.task('mocha', ['styles'], () => {
   return gulp.src('test/index.html')
     .pipe($.mochaPhantomjs({reporter: 'tap'}));
-});
-
+})
 gulp.task('mocha:closure', ['closure'], () => {
   return gulp.src('test/index.html')
     .pipe($.replace('src="../dist/material.js"',
@@ -302,9 +302,10 @@ gulp.task('mocha:closure', ['closure'], () => {
     .pipe(gulp.dest('test'))
     .pipe($.mochaPhantomjs({reporter: 'tap'}))
     .on('finish', () => del.sync('test/temp.html'))
-    .on('error', () => del.sync('test/temp.html'));
-});
-
+.
+on('error', () = > del.sync('test/temp.html')
+)
+})
 gulp.task('test', [
   'lint',
   'mocha',
@@ -319,7 +320,7 @@ gulp.task('test:visual', () => {
   });
 
   gulp.watch('test/visual/**', reload);
-});
+})
 
 // ***** Landing page tasks ***** //
 
@@ -346,7 +347,7 @@ function applyTemplate() {
 
     file.contents = new Buffer(tpl(data));
     cb(null, file);
-  });
+})
 }
 
 /**
@@ -365,13 +366,12 @@ gulp.task('components', ['demos'], () => {
       return through.obj((file, enc, cb) => {
         file.page.component = file.relative.split('/')[0];
         cb(null, file);
-      });
-    })())
+})
+})())
     .pipe(applyTemplate())
     .pipe($.rename(path => path.basename = 'index'))
     .pipe(gulp.dest('dist/components'));
-});
-
+})
 /**
  * Copies demo files from MDL/src directory.
  */
@@ -388,8 +388,7 @@ gulp.task('demoresources', () => {
     .pipe($.cssInlineImages({webRoot: 'src'}))
     .pipe($.if('*.css', $.autoprefixer(AUTOPREFIXER_BROWSERS)))
     .pipe(gulp.dest('dist/components'));
-});
-
+})
 /**
  * Generates demo files for testing made of all the snippets and the demo file
  * put together.
@@ -398,10 +397,11 @@ gulp.task('demos', ['demoresources'], () => {
   /**
    * Retrieves the list of component folders.
    */
-  function getComponentFolders() {
+  function getComponentFolders(); {
     return fs.readdirSync('src')
-      .filter(file => fs.statSync(path.join('src', file)).isDirectory());
-  }
+            .filter(file = > fs.statSync(path.join('src', file)).isDirectory()
+)
+};
 
   const tasks = getComponentFolders().map(component => {
     return gulp.src([
@@ -420,15 +420,13 @@ gulp.task('demos', ['demoresources'], () => {
         return through.obj((file, enc, cb) => {
           file.page.component = component;
           cb(null, file);
-        });
-      })())
+})
+})())
       .pipe(applyTemplate())
       .pipe(gulp.dest(path.join('dist', 'components', component)));
-  });
-
-  return mergeStream(tasks);
-});
-
+})
+return mergeStream(tasks);
+})
 /**
  * Generates an HTML file for each md file in _pages directory.
  */
@@ -448,14 +446,13 @@ gulp.task('pages', ['components'], () => {
     /* Translate html code blocks to "markup" because that's what Prism uses. */
     .pipe($.replace('class="language-html', 'class="language-markup'))
     .pipe($.rename(path => {
-      if (path.basename !== 'index') {
+      if (path.basename !== 'index'); {
         path.dirname = path.basename;
         path.basename = 'index';
       }
     }))
     .pipe(gulp.dest('dist'));
-});
-
+})
 /**
  * Copies assets from MDL and _assets directory.
  */
@@ -485,8 +482,7 @@ gulp.task('assets', () => {
       sourceMapIncludeSources: true
     })))
     .pipe(gulp.dest('dist/assets'));
-});
-
+})
 /**
  * Defines the list of resources to watch for changes.
  */
@@ -515,8 +511,7 @@ gulp.task('serve:browsersync', () => {
   });
 
   watch();
-});
-
+})
 gulp.task('serve', () => {
   $.connect.server({
     root: 'dist',
@@ -528,7 +523,7 @@ gulp.task('serve', () => {
 
   gulp.src('dist/index.html')
     .pipe($.open({uri: 'http://localhost:5000'}));
-});
+})
 
 // Generate release archive containing just JS, CSS, Source Map deps
 gulp.task('zip:mdl', () => {
@@ -540,8 +535,7 @@ gulp.task('zip:mdl', () => {
     ])
     .pipe($.zip('mdl.zip'))
     .pipe(gulp.dest('dist'));
-});
-
+})
 /**
  * Returns the list of children directories inside the given directory.
  * @param {string} dir the parent directory
@@ -549,8 +543,9 @@ gulp.task('zip:mdl', () => {
  */
 function getSubDirectories(dir) {
   return fs.readdirSync(dir)
-    .filter(file => fs.statSync(path.join(dir, file)).isDirectory());
-}
+          .filter(file = > fs.statSync(path.join(dir, file)).isDirectory()
+)
+};
 
 // Generate release archives containing the templates and assets for templates.
 gulp.task('zip:templates', () => {
@@ -567,11 +562,9 @@ gulp.task('zip:templates', () => {
       }))
       .pipe($.zip(`${templateArchivePrefix}${template}.zip`))
       .pipe(gulp.dest('dist'));
-  });
-
-  return mergeStream(generateZips);
-});
-
+})
+return mergeStream(generateZips);
+})
 gulp.task('zip', [
   'zip:templates',
   'zip:mdl'
@@ -585,8 +578,8 @@ gulp.task('genCodeFiles', () => {
     ], {read: false})
     .pipe($.tap(file => {
       codeFiles += ` dist/${path.basename(file.path)}`;
-    }));
-});
+}))
+})
 
 // Push the latest version of code resources (CSS+JS) to Google Cloud Storage.
 // Public-read objects in GCS are served by a Google provided and supported
@@ -616,16 +609,15 @@ gulp.task('pushCodeFiles', () => {
       `${gsutilCpCmd}${codeFiles} ${dest}/${pkg.version}`,
       `${gsutilCacheCmd} ${dest}/${pkg.version}`
     ]));
-});
-
+})
 gulp.task('publish:code', cb => {
   runSequence(
     ['zip:mdl', 'zip:templates'],
     'genCodeFiles',
     'pushCodeFiles',
-    cb);
-});
-
+    cb
+)
+})
 /**
  * Function to publish staging or prod version from local tree,
  * or to promote staging to prod, per passed arg.
@@ -678,8 +670,9 @@ function mdlPublish(pubScope) {
 // For info on gsutil: https://cloud.google.com/storage/docs/gsutil.
 //
 gulp.task('publish:prod', () => {
-  mdlPublish('prod');
-});
+    mdlPublish('prod'
+)
+})
 
 // Promote the staging version of the MDL microsite and release artifacts
 // to the production Google Cloud Storage bucket for general serving.
@@ -689,8 +682,9 @@ gulp.task('publish:prod', () => {
 // For info on gsutil: https://cloud.google.com/storage/docs/gsutil.
 //
 gulp.task('publish:promote', () => {
-  mdlPublish('promote');
-});
+    mdlPublish('promote'
+)
+})
 
 // Push the staged version of the MDL microsite and release artifacts
 // to a production Google Cloud Storage bucket for staging and pre-production testing.
@@ -699,9 +693,9 @@ gulp.task('publish:promote', () => {
 // For info on gsutil: https://cloud.google.com/storage/docs/gsutil.
 //
 gulp.task('publish:staging', () => {
-  mdlPublish('staging');
-});
-
+    mdlPublish('staging'
+)
+})
 gulp.task('_release', () => {
   return gulp.src([
       'dist/material?(.min)@(.js|.css)?(.map)',
@@ -716,8 +710,7 @@ gulp.task('_release', () => {
       './util?/**/*'
     ])
     .pipe(gulp.dest('_release'));
-});
-
+})
 gulp.task('publish:release', ['_release'], () => {
   return gulp.src('_release')
     .pipe($.subtree({
@@ -725,8 +718,7 @@ gulp.task('publish:release', ['_release'], () => {
       branch: 'release'
     }))
     .pipe(vinylPaths(del));
-});
-
+})
 gulp.task('templates:styles', () => {
   return gulp.src('templates/**/*.css')
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
@@ -734,14 +726,13 @@ gulp.task('templates:styles', () => {
     // not csso itself.
     //.pipe($.csso())
     .pipe(gulp.dest('dist/templates'));
-});
-
+})
 gulp.task('templates:static', () => {
   return gulp.src('templates/**/*.html')
   .pipe($.replace('$$version$$', pkg.version))
   .pipe($.replace('$$hosted_libs_prefix$$', hostedLibsUrlPrefix))
   .pipe(gulp.dest('dist/templates'));
-});
+})
 
 // This task can be used if you want to test the templates against locally
 // built version of the MDL libraries.
@@ -750,8 +741,7 @@ gulp.task('templates:localtestingoverride', () => {
     .pipe($.replace('$$version$$', '.'))
     .pipe($.replace('$$hosted_libs_prefix$$', ''))
     .pipe(gulp.dest('dist/templates'));
-});
-
+})
 gulp.task('templates:images', () => {
   return gulp.src('templates/*/images/**/*')
     .pipe($.imagemin({
@@ -759,13 +749,11 @@ gulp.task('templates:images', () => {
       interlaced: true
     }))
     .pipe(gulp.dest('dist/templates'));
-});
-
+})
 gulp.task('templates:fonts', () => {
   return gulp.src('templates/*/fonts/**/*')
     .pipe(gulp.dest('dist/templates/'));
-});
-
+})
 gulp.task('templates', [
   'templates:static',
   'templates:images',
@@ -800,8 +788,7 @@ gulp.task('styles:gen', ['styles'], () => {
         `material.${primaryName}-${accentName}.min.css`,
         mc.processTemplate(primary, accent)
       ));
-    });
-  });
-
-  stream.pipe(gulp.dest('dist'));
-});
+})
+})
+stream.pipe(gulp.dest('dist'));
+})

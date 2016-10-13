@@ -18,8 +18,7 @@ function onNavigateCallback(pageIndex) {
     current = pageIndex;
     console.log("navigating to", pageIndex);
 
-    var $current = $($fixeds[pageIndex]);;
-
+    var $current = $($fixeds[pageIndex]);
     if (window.android) {
         setTimeout(function(){
             $fixeds.hide();
@@ -47,7 +46,6 @@ function onBack() {
 }
 
 $(document).ready(function () {
-
 
     var $section = $(".section");
 

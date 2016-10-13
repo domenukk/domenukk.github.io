@@ -912,7 +912,7 @@ var _gestureStartTime,
 						_applyCurrentZoomPan();
 						
 						_stopAnimation('zoomPan');
-						return;
+
 					}
 				}
 

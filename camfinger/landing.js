@@ -1,71 +1,63 @@
-//var element = document.querySelector("#greeting");
-//element.innerText = "Hello, world!";
-
-var SPEED = 550;
-var DROID_CHANGING_TIME = 150;
-
-if (!console.error) {
-    console.error = console.log;
-}
-
-function native(what) {
-    console.log("native ignored: " + what);
-}
-
-function hideMe() {
-    native("startLearning");
-}
-
-var $fixeds = $(".fixed");
-$fixeds.hide();
-$($fixeds[0]).show();
-
 function navigateToAppStore() {
-   top.location.href = "https://itunes.apple.com/us/app/camfinger/id1159564814?l=de&ls=1&mt=8";
+    top.location.href = "https://itunes.apple.com/us/app/camfinger/id1159564814?l=de&ls=1&mt=8";
 }
 
 function navigateToPlayStore() {
-    top.location.href = 'https://play.google.com/store/apps/details?id=de.fau.camfinger&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1';
+    top.location.href = 'https://play.google.com/store/apps/details?id=de.fau.camfinger';
 }
 
 $(document).ready(function () {
-    var $bottom = $("#bottom");
+    "use strict";
+    var colors = ['#1bbc9b', '#7BAABE', '#FFB13D', '#ccc', '#fff'];
+    var SPEED = 550;
 
-    $("#root").fadeIn(2000);
+    var $fixeds = $(".fixed");
+    var $bottom = $("#bottom");
+    var $section = $(".section");
+    var $fullpage = $('#fullpage');
+    var $root = $('#root');
+    var $loading = $('#loading');
+    // the buttons
+    var $ios = $("#ios");
+    var $android = $("#android");
+
+    function showFixedAt(index) {
+        $fixeds.hide();
+        $($fixeds[index]).show();
+    }
+
+    showFixedAt(0);
+
+    $root.fadeIn(2000);
 
     // fade in the app stores after 10 seconds.
     setTimeout(function () {
         $bottom.fadeIn(750);
     }, 10000);
 
-    $("#ios").click(navigateToAppStore);
-
-    $("#android").click(navigateToPlayStore);
+    // handle appstore forwarding
+    $ios.click(navigateToAppStore);
+    $android.click(navigateToPlayStore);
 
     if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
-        try {
-            //navigateToPlayStore();
-        } catch (ex) {
-            console.error("nav didn't work");
+        if (document.referrer) {
+            // chrome on android does not allow forwarding to an app straight from user input.
+            navigateToPlayStore();
         }
-        $("#ios").hide();
+        $ios.hide();
     }
     if (navigator.userAgent.toLowerCase().indexOf("ios") > -1) {
         navigateToAppStore();
-        $("#android").hide();
+        $android.hide();
     }
 
-    var $section = $(".section");
-
-    //colors = ['#13D609', '#387ABD', '#FFB13D', '#FF7E3D'];
-    var colors = ['#1bbc9b', '#7BAABE', '#FFB13D', '#ccc', '#fff']; //TODO!
-    $('#fullpage').fullpage({
+    $fullpage.fullpage({
         //Navigation
         menu: '#menu',
         lockAnchors: true,
-        anchors: ['firstPage', 'secondPage'],
-        navigation: false, //true,
-        showActiveTooltip: true, 
+        anchors: ['intro', 'science', 'fingerprint', 'download'],
+        navigation: false,
+        showActiveTooltip: true,
 
         //Scrolling
         css3: false,
@@ -96,7 +88,7 @@ $(document).ready(function () {
         responsiveHeight: 0,
 
         //events
-        onLeave: function(index, nextIndex, direction) {
+        onLeave: function (index, nextIndex, direction) {
             // horizontal
             setTimeout(function () {
                 $fixeds.hide();
@@ -109,28 +101,24 @@ $(document).ready(function () {
             $fixeds.hide();
             $($fixeds[index]).show();
             //console.log("loaded ", anchorLink, index);
-            
+
             // hide the main foo :)
             if (index > 3) {
                 $bottom.fadeIn(750);
             }
-
         },
         //afterRender: function(){},
         //afterResize: function(){},
         afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
             //Animate the checkmark after slide
-
             $($fixeds[slideIndex]).find("#animateme").addClass("svg");
-
         },
-        onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
 
+        onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
             $section.animate({
                 backgroundColor: colors[nextSlideIndex]
             });
         }
     });
-
 
 });

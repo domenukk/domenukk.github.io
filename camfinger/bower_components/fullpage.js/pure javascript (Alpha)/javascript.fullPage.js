@@ -531,8 +531,7 @@
            if ( n.nodeType == 1 && n != skipMe)
               r.push( n );
         return r;
-    };
-
+    }
     //Gets siblings
     function getAllSiblings(n) {
         return getChildren(n.parentNode.firstChild, n);
@@ -724,10 +723,9 @@
     */
     function silentMoveTo(sectionAnchor, slideAnchor){
         setScrollingSpeed (0, 'internal');
-        moveTo(sectionAnchor, slideAnchor)
+        moveTo(sectionAnchor, slideAnchor);
         setScrollingSpeed (originals.scrollingSpeed, 'internal');
-    };
-
+    }
     /**
     * Moves the page to the given section and slide.
     * Anchors or index positions can be used as params.
