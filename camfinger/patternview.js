@@ -3,7 +3,6 @@ var currentState = initialState;
 
 var path = "";
 
-
 var userId = "";
 
 var currentInteval = undefined;
@@ -80,10 +79,20 @@ function setImageUrl(url) {
     return "success"
 }
 
+function setMessage(content, intermediateProgress) {
+    $("#waitinText").html(content);
+    if (intermediateProgress && intermediateProgress != "false") {
+        $('.mdl-js-progress').show()
+        $('.mdl-js-progress').addClass("mdl-progress__indeterminate");
+    } else {
+        $('.mdl-js-progress').hide()
+    }
+}
 
 function setPhotoCount(numDone, numTotal) {
     if (parseInt(numDone, 10) >= parseInt(numTotal, 10)) {
         $("#waitingText").html("All uploads done. Waiting for server to process. This will take a few more minutes, depending on the server load.");
+        $('.mdl-js-progress').hide();
     } else {
         $("#numdone").html(numDone);
         document.querySelector('.mdl-js-progress').MaterialProgress.setProgress((numDone / numTotal) * 100);

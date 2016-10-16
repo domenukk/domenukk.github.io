@@ -21,9 +21,13 @@ function setCaptureCount(captureCount) {
     }*/
 }
 
+function setMessage(content) {
+   $("#text").html(content);
+   photosToGo = 1; // show thank you afterwards
+}
+
 function buttonPressed() {
     native("capture");
     photosToGo--;
     setCaptureCount(photosToGo);
-
 }
