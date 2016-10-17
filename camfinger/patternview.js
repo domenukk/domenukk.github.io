@@ -1,11 +1,10 @@
 var initialState = "#pattern";
 var currentState = initialState;
-
 var path = "";
-
 var userId = "";
-
 var currentInteval = undefined;
+var pattern = {};
+var imageUrl = "";
 
 function setUserId(newUserId) {
     userId = newUserId;
@@ -14,30 +13,26 @@ function setUserId(newUserId) {
     checkForImage();
 }
 
+function back() {
+    location.hash = initialState;
+    switch (currentState) {
+        case initialState:
+            console.log("What we're gonna do now? Keep rolling... Should we end the app?");
+            break;
+
+        default:
+            $(currentState).replaceFadeRight($(initialState));
+            break;
+
+    }
+    currentState = initialState;
+}
+
 function onBack() {
     if (currentState == initialState) {
         native("exit");
     }
     back();
-}
-
-var pattern = {};
-var imageUrl = "";
-
-
-function back() {
-    location.hash = initialState;
-    switch(currentState) {
-        case initialState:
-            console.log("What we're gonna do now? Keep rolling... Should we end the app?");
-            break;
-        
-        default:
-            $(currentState).replaceFadeRight($(initialState));
-            break;
-    
-    }
-    currentState = initialState;
 }
 
 function navigate(newId) {
@@ -57,7 +52,7 @@ if (location.hash) {
     if (hashpath[0] == "") {
         pathId++;
     }
-    
+
     path = hashpath[pathId];
     if (hashpath[pathId + 1]) {
         userId = hashpath[pathId + 1];
@@ -106,36 +101,48 @@ function showInfo() {
 function initMenuInterceptorToggler() {
     var animating = false;
     var $touchInterceptor = $("#menu-touch-interceptor");
-    var $options = $("optionsmenu");
+    var $optionsmenu = $("#optionsmenu");
+
     function animationComplete() {
         animating = false;
     }
+
     function toggle() {
-        if (animating) {return;}
+        if (animating) {
+            return;
+        }
         animating = true;
-            window.setTimeout(function () {
+        window.setTimeout(function () {
             if (window.android) {
-            $touchInterceptor.toggle();
-            animationComplete();
+                $touchInterceptor.toggle();
+                animationComplete();
             } else {
-            $touchInterceptor.fadeToggle(animationComplete);
+
+                $touchInterceptor.fadeToggle(animationComplete);
             }
         }, 0);
-   }
+    }
+
     var $menutoggler = $(".menutoggler");
     $menutoggler.hammer().on("tap", toggle);
-    
-    $touchInterceptor.hammer().on("tap", function() {
-                                             $($options).fadeOut();
-                                             });
-    
+
+    $touchInterceptor.hammer().on("tap",
+        function () {
+            $(".mdl-menu__container").removeClass("is-visible")
+
+
+//mdl-menu__container is-upgraded is-visible
+
+            //                                 $optionsmenu.fadeOut();
+        });
+
     // TODO: By clicking on the dots, you can reach a wrong state here...
 }
 
 
 var initPhotoSwipeFromDOM = function (gallerySelector) {
 
-    // parse slide data (url, title, size ...) from DOM elements 
+    // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
     var parseThumbnailElements = function (el) {
         var thumbElements = el.childNodes,
@@ -150,7 +157,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 
             figureEl = thumbElements[i]; // <figure> element
 
-            // include only element nodes 
+            // include only element nodes
             if (figureEl.nodeType !== 1) {
                 continue;
             }
@@ -165,7 +172,6 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
                 w: parseInt(size[0], 10),
                 h: parseInt(size[1], 10)
             };
-
 
 
             if (figureEl.children.length > 1) {
@@ -227,7 +233,6 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
         }
 
 
-
         if (index >= 0) {
             // open PhotoSwipe if valid index found
             openPhotoSwipe(index, clickedGallery);
@@ -283,7 +288,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
                     pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
                     rect = thumbnail.getBoundingClientRect();
 
-                return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+                return {x: rect.left, y: rect.top + pageYScroll, w: rect.width};
             }
 
         };
@@ -291,7 +296,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
         // PhotoSwipe opened from URL
         if (fromURL) {
             if (options.galleryPIDs) {
-                // parse real index when custom PIDs are used 
+                // parse real index when custom PIDs are used
                 // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
                 for (var j = 0; j < items.length; j++) {
                     if (items[j].pid == index) {
@@ -337,16 +342,16 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 };
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 
-initMenuInterceptorToggler();
+    initMenuInterceptorToggler();
     initPhotoSwipeFromDOM('.my-gallery');
 
-$(document).hammer().on("swiperight", back);
-$("[hammer]").on("tap", function() {
-    eval($(this).attr("hammer"));
-});
+    $(document).hammer().on("swiperight", back);
+    $("[hammer]").on("tap", function () {
+        eval($(this).attr("hammer"));
+    });
 
     if (window.android) {
         // f******ck css and beauty too.
