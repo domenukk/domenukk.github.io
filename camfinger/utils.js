@@ -1,9 +1,11 @@
 function isIOS() {
-    return navigator.platform === 'iOS' || navigator.platform === 'iPhone';
+    var iOS = ['iPad', 'iPhone', 'iPod'].indexOf(navigator.platform) >= 0;
+    return iOS || navigator.platform === 'iOS' || navigator.platform === 'iPhone';
+
 }
 
 function native(action) {
-    if (isIOS() && !/safari/.test(window.navigator.userAgent.toLowerCase())) {
+    if (isIOS()) {
         window.location.replace("inapp://" + action);
     } else if (window.android) {
         console.log("Handling action: " + action);
@@ -13,7 +15,9 @@ function native(action) {
     }
 }
 
+
 var defaultFadeTime = 0;
+
 var seconds = 0.32;
 $.fn.extend({
     isAnimating: false,
@@ -101,4 +105,5 @@ $.fn.extend({
             }
         }, defaultFadeTime);
     }
+
 });
