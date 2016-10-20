@@ -5,13 +5,13 @@ function isIOS() {
 }
 
 function native(action) {
-    if (isIOS()) {
+    if (isIOS() && !/safari/.test(window.navigator.userAgent.toLowerCase())) {
         window.location.replace("inapp://" + action);
     } else if (window.android) {
         console.log("Handling action: " + action);
         window.android[action]();
     } else {
-        alert("Handle this action nau: " + action);
+        alert("Action: " + action);
     }
 }
 

@@ -46,7 +46,7 @@ $(document).ready(function () {
         }
         $ios.hide();
     }
-    if (navigator.userAgent.toLowerCase().indexOf("ios") > -1) {
+    if (isIOS()) {
         navigateToAppStore();
         $android.hide();
     }
