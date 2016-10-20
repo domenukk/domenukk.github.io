@@ -1,9 +1,9 @@
 function isIOS() {
-    return !/safari/.test(window.navigator.userAgent.toLowerCase()) || navigator.platform === 'iOS' || navigator.platform === 'iPhone';
+    return navigator.platform === 'iOS' || navigator.platform === 'iPhone';
 }
 
 function native(action) {
-    if (isIOS()) {
+    if (isIOS() && !/safari/.test(window.navigator.userAgent.toLowerCase())) {
         window.location.replace("inapp://" + action);
     } else if (window.android) {
         console.log("Handling action: " + action);
@@ -13,9 +13,7 @@ function native(action) {
     }
 }
 
-
 var defaultFadeTime = 0;
-
 var seconds = 0.32;
 $.fn.extend({
     isAnimating: false,
@@ -24,7 +22,7 @@ $.fn.extend({
 
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
         var $this = $(this);
-        $this.css("-vendor-animation-duration", seconds +"s");
+        $this.css("-vendor-animation-duration", seconds + "s");
 
         if ($this.isAnimating) {
             console.log("ignoring naviagtion, currently animating", $this);
@@ -32,8 +30,8 @@ $.fn.extend({
         }
         $this.isAnimating = true;
         $this.addClass('animated ' + animationName).one(animationEnd, function () {
-          $this.removeClass('animated ' + animationName);
-            this.isAnimating = false; 
+            $this.removeClass('animated ' + animationName);
+            this.isAnimating = false;
             if (callback) {
                 callback($this);
             }
@@ -62,7 +60,7 @@ $.fn.extend({
         $this.show();
         $this.animateCss("fadeInRight", callback);
     },
-    
+
     fadeInLeft: function (callback) {
         var $this = $(this);
         $this.show();
@@ -83,14 +81,14 @@ $.fn.extend({
             } else {
                 $new.fadeInRight(callback);
             }
-            
+
         }, defaultFadeTime);
     },
     replaceFadeRight: function ($new, callback) {
         if (typeof $new == "string") {
             $new = $($new);
         }
-         if ($new.isAnimating || $(this).isAnimating) {
+        if ($new.isAnimating || $(this).isAnimating) {
             throw("AlreadyAnimating");
         }
         $(this).fadeOutRight();
@@ -103,5 +101,4 @@ $.fn.extend({
             }
         }, defaultFadeTime);
     }
-    
 });

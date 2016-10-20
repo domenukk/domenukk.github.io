@@ -1,21 +1,23 @@
 /* the card */
 .demo-card-square.mdl-card {
-  width: 80%;
-  height: 80%;
+    width: 80%;
+    height: 80%;
 }
+
 .demo-card-square > .mdl-card__title {
-  color: #fff;
-  /*background:
-    url('http://www.churchplanting.com/wp-content/uploads/2012/02/dummy.jpg') bottom right 15% no-repeat #46B6AC;*/
+    color: #fff;
+    /*background:
+      url('http://www.churchplanting.com/wp-content/uploads/2012/02/dummy.jpg') bottom right 15% no-repeat #46B6AC;*/
 }
 
 section {
-  margin: 20px;
+    margin: 20px;
 }
+
 /* thecardsend */
 
 a, a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 

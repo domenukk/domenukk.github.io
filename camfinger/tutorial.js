@@ -18,10 +18,11 @@ function onNavigateCallback(pageIndex) {
     current = pageIndex;
     console.log("navigating to", pageIndex);
 
-    var $current = $($fixeds[pageIndex]);;
+    var $current = $($fixeds[pageIndex]);
+    ;
 
     if (window.android) {
-        setTimeout(function(){
+        setTimeout(function () {
             $fixeds.hide();
             $current.show();
         }, DROID_CHANGING_TIME);
@@ -31,7 +32,7 @@ function onNavigateCallback(pageIndex) {
         $current.fadeIn();
     }
 //    $current.find(".animate").each(function (el) {
-        // new Vivus(el, {duration: 1000}); //myCallback);
+    // new Vivus(el, {duration: 1000}); //myCallback);
     //});
 
     //$("#topelement").html("PAGE" + pageIndex);
@@ -111,9 +112,9 @@ $(document).ready(function () {
 
 
             if (slideIndex >= 2) {
-                setTimeout(function() {
+                setTimeout(function () {
                     native("initCamera");
-                    }, 5);
+                }, 5);
             }
         },
         onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
@@ -121,14 +122,14 @@ $(document).ready(function () {
 
 
             if (window.android) {
-                setTimeout(function() {
+                setTimeout(function () {
                     $section.css("backgroundColor", colors[nextSlideIndex]);
                 }, DROID_CHANGING_TIME);
             } else {
 
-            $section.animate({
-                backgroundColor: colors[nextSlideIndex],
-            });
+                $section.animate({
+                    backgroundColor: colors[nextSlideIndex],
+                });
             }
 
 

@@ -16,14 +16,15 @@ function setCaptureCount(captureCount) {
     photosToGo = captureCount;
     if (photosToGo >= 0) {
         $("#text").html(texts[photosToGo]);
-    } /*else {
-        native("doneLearning");
-    }*/
+    }
+    /*else {
+     native("doneLearning");
+     }*/
 }
 
 function setMessage(content) {
-   $("#text").html(content);
-   photosToGo = 1; // show thank you afterwards
+    $("#text").html(content);
+    photosToGo = 1; // show thank you afterwards
 }
 
 function buttonPressed() {

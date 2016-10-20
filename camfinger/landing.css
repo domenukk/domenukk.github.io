@@ -352,11 +352,11 @@ a {
 }
 
 .hidden {
-// visibility: hidden;
-// opacity: 0;
-// transition: visibility 0 s 1.5 s, opacity 1.5 s ease-in-out;
+/ / visibility: hidden;
+/ / opacity: 0;
+/ / transition: visibility 0 s 1.5 s, opacity 1.5 s ease-in-out;
 
-// for safarifoo animation-duration: 1.5 s;
+/ / for safarifoo animation-duration: 1.5 s;
     animation-iteration-count: 1;
     animation-name: fadeOut;
     animation-timing-function: ease-in-out;
