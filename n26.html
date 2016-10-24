@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html style="width: 100%; height: 100%;">
 <head>
     <meta charset="UTF-8">
     <title>Open App</title>
 
-    <!--
-    URL Params:
-
-    customSchemeURL: Your custom scheme app
-    storeURL: Your app url at App Store or Google Play
-
-    Any aditional parameter will be passed as param to the app url
-    -->
     <script language="javascript">
-        function open() {
-            var url = "https://dmnk.co";
-            var appUrl = "number26://main/?tutorial=" + encodeURIComponent(url);
 
-            document.location.href = appUrl;
+
+        function openInN26() {
+            var url = window.location.href;
+            var appUrl = "number26://main/?tutorial=" + encodeURIComponent(url.trim());
 
             console.log("Opening URL: " + appUrl) ;
+            document.location.href = appUrl;
             document.location.assign(appUrl);
         }
+
+        function onLoad() {
+            if (window.Android) {
+                // We're inside the webview. :)
+                document.getElementById("main").innerHTML =
+                        "<p>Hello N26, I'm inside you 💖<br>Dominik.</p>";
+            }
+            if (window.document.referrer && window.document.referrer.length > 0) {
+                openInN26();
+            }
+        }
     </script>
+    <style>
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
-<body onLoad="open()" style="background: #00A4E6">
+<body onLoad="onLoad()" style="width: 100%; height: 100%; background: #3bcdd6; position: relative">
+
+<div id="main" class="center" style="color: white">
+    <p>Please make sure you are logged in on your Android N26 App, then click this button to get redirected.</p>
+    <button onclick="openInN26()">Magic</button>
+</div>
+
 </body>
 </html>
