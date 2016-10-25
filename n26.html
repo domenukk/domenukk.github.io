@@ -22,6 +22,10 @@
         var droids = "Only works on Android. Sorry for that :/";
 
         function openInN26() {
+            if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
+                alert(droids);
+                return;
+            }
             [][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+
             []]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[]
         )
