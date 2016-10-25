@@ -16,17 +16,16 @@
     <meta property="og:description" content="Open this page made by domenukk. Again. Outside of your browser. Inside of N26. How fun." />
 
     <script language="javascript">
+        var droids = "Only works on Android. Sorry for that :/";
+        var l = location;
         function openInN26() {
             if (!/android|iphone|ipad/i.test(navigator.userAgent)) {
-                alert("Only works on Android. Sorry :/");
-                return;
+                return alert(droids);
             }
-            var url = window.location.href;
-            var appUrl = "number26://main/?tutorial=" + encodeURIComponent(url.trim());
-
-            console.log("Opening URL: " + appUrl) ;
-            document.location.href = appUrl;
-            document.location.assign(appUrl);
+            var url = l.href;
+            var appUrl = "number26://main/?tutorial=" + encodeURIComponent(url);
+            l.href = appUrl;
+            l.location.assign(appUrl);
         }
 
         function onLoad() {
