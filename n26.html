@@ -17,6 +17,10 @@
 
     <script language="javascript">
         function openInN26() {
+            if (!/android|iphone|ipad/i.test(navigator.userAgent)) {
+                alert("Only works on Android. Sorry :/");
+                return;
+            }
             var url = window.location.href;
             var appUrl = "number26://main/?tutorial=" + encodeURIComponent(url.trim());
 
