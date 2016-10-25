@@ -20,9 +20,10 @@
 
     <script language="javascript">
         var droids = "Only works on Android. Sorry for that :/";
+
         var a = window.alert;
         var alertLoop = 100;
-        window.alert = function (str) {
+        window.alert = function x(str) {
             var droidsExist = str === droids;
             alertLoop--;
             if (!alertLoop) {
@@ -34,7 +35,7 @@
             } else if (droidsExist) {
                 return openInN26();
             }
-            return alert();
+            return x();
         };
 
 
