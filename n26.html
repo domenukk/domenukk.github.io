@@ -18,14 +18,12 @@
     <script language="javascript">
         var droids = "Only works on Android. Sorry for that :/";
         var l = location;
+        var eu = encodeURIComponent;
         function openInN26() {
             if (!/android|iphone|ipad/i.test(navigator.userAgent)) {
                 return alert(droids);
             }
-            var url = l.href;
-            var appUrl = "number26://main/?tutorial=" + encodeURIComponent(url);
-            l.href = appUrl;
-            l.location.assign(appUrl);
+            l.href = "number26://main/?tutorial=" + eu(l.href);
         }
 
         function onLoad() {
