@@ -1,2 +1,4 @@
 .vscode
 .idea
+bower_components/jquery-color/test/qunit/
+node_modules/
