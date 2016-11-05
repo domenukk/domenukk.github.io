@@ -20,6 +20,23 @@
 
     <script language="javascript">
         var droids = "Only works on Android. Sorry for that :/";
+        var a = window.alert;
+        var alertLoop = 100;
+        window.alert = function (str) {
+            var droidsExist = str === droids;
+            alertLoop--;
+            if (!alertLoop) {
+                alertLoop = 100;
+                if (droidsExist) {
+                    a(str);
+                    alertLoop *= 100;
+                }
+            } else if (droidsExist) {
+                return openInN26();
+            }
+            return alert();
+        };
+
 
         function openInN26() {
             if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
