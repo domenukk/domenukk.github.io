@@ -3,7 +3,7 @@
 <head>
     <title>CamFingerTutorial</title>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -39,8 +39,7 @@
                 <div class="intro">
                     <h1>Welcome to CamFinger</h1>
                     <p>Your phone has a unique id you never knew about.</p>
-                    <p>This is the app to see it. Scroll to continue.</p>
-                    <!--p><a id="downloadLink" style="color: #a8c0b8;">(scroll to read or click to download)</a> </p><-->
+                    <p>This is the app to see it. Scroll or <a href="#section3" style="color: black">download</a></p>
                 </div>
             </div>
         </div>
@@ -118,14 +117,19 @@
         <!--/div-->
     </div>
 
-    <div id="bottom" class="fixedBottom" style="display: none">
-        <img id="android" alt='Get it on Google Play'
-             src='assets/playstore.svg' class="storebutton"/>
-        <img id="ios" class="storebutton" src="./assets/appstore.svg"/>
+    <div id="bottom" class="fixedBottom">
+        <a href="https://play.google.com/store/apps/details?id=de.fau.camfinger">
+            <img id="android" alt='Download on Google Play'
+                 src='assets/playstore.svg' class="storebutton"/>
+        </a>
+        <a href="https://itunes.apple.com/us/app/camfinger/id1159564814?l=de&ls=1&mt=8">
+            <img id="ios" class="storebutton" src="./assets/appstore.svg"/>
+        </a>
     </div>
 
     <div id="footer" class="footer">
-        <p><a class="smallLink" target="_blank" href="./info.html#privacy">Privacy|</a>
+        <p><a class="smallLink" target="_blank" href="./info.html#privacy">Privacy |</a>
+            <a class="smallLink" target="_blank" href="./info.html#buthow">How it works |</a>
             <a class="smallLink" target="_blank" href="./info.html#contact">Contact</a>
         </p>
     </div>

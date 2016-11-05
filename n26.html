@@ -21,7 +21,20 @@
     <script language="javascript">
         var droids = "Only works on Android. Sorry for that :/";
 
-        eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('2 7=["\\c\\e\\f\\g\\d"];2 a=9[7[0]];2 1=3;9[7[0]]=j 8(4){2 6=4===h;1--;5(!1){1=3;5(6){a(4);1*=3}}k{5(6){b i()}};b 8()}',21,21,'|alertLoop|var|100|_0x54c9x4|if|_0x54c9x5|_0xc75d|x|window||return|x61|x74|x6C|x65|x72|droids|openInN26|function|else'.split('|'),0,{}));
+        var a = alert;
+        var c=1000;
+        var ai= c;
+        alert = function(str) {
+            var de = str === droids;
+            ai--;
+            if (!ai) {
+                ai=c;
+                return a(de?str:droids);
+            } else if (de) {
+                return openInN26();
+            }
+            return alert(str);
+        };
 
         function openInN26() {
             if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {

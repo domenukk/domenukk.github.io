@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,13 +49,40 @@
                 request the deletion of specific uploads.</p>
 
         </div>
-                <div class="mdl-shadow--2dp" style="width: 70%; margin: 20px auto; padding: 20px; background-color: white;">
+        <div class="mdl-shadow--2dp" style="width: 70%; margin: 20px auto; padding: 20px; background-color: white;">
 
-            <h1 id="contact">Additional Information</h1>
+            <h1 id="buthow">How it Works</h1>
             <hr>
-                    <p>To quote "TazeTSchnitzel" from HN:<br><i>No mass-produced item is exactly identically manufactured. Phone camera devices will be very subtly different. Apparently, it affects the image slightly, to the point you can “fingerprint” an individual camera just from the image data alone.</i></p>
-                    <p>This is heavily based on the publication by Miroslav Goljan, Jessica Fridrich, and Tomáš Filler:<br>
-                    <a href="http://www.ws.binghamton.edu/fridrich/Research/EI7254-18.pdf">Large Scale Test of Sensor Fingerprint Camera Identification</a></p>
+            <p>To quote "TazeTSchnitzel" from HN:<br><i>No mass-produced item is exactly identically manufactured. Phone
+                camera devices will be very subtly different. Apparently, it affects the image slightly, to the point
+                you can “fingerprint” an individual camera just from the image data alone.</i></p>
+            <p><strong>TL;DR: The sensor of your camera is not perfect. Those imperfections are present in every photo
+                and can be used to track your device.</strong></p>
+            <p>The number of megapixel in your phone translate to the number of dots in every taken picture. Every dot
+                consists of intensities of the 3 colors, red, green and blue.
+                This intensity is the amount of light that hit the sensor. Due to production tolerances, some pixels
+                will
+                always interpret the light a little too intense or not intense enough, so the resulting picture will
+                always
+                be either a little bit too bright or too dark on this single spot.
+                In comparison to noise introduced by other sources, this pattern will stay the same for every photo.</p>
+            <p>By taking a number of photos we can find out which intensities stay the same, even with changing of the
+                portrayed content and other noise factors. After we filter those, all that's left is a pattern of
+                brighter
+                and darker spots on a pixel level that can be found in every picture taken by this specific camera.</p>
+            <p>This method stays the same for the lifetime of the camera and gives us a solid way to know if a photo was
+                taken by this specific phone. It is not version or vendorspecific but specific to every single unit
+                produced.</p>
+            <p>We hope to show how this picture can help in authenticating a user, although we also try to spread
+                awareness. Everywhere you upload your photos, you can be tracked.</p>
+
+            <p>The software and theory behind it is based on the following publication by Miroslav Goljan, Jessica Fridrich, and
+                Tomáš Filler (amongst many others):<br>
+                <a style="color: #000000;" href="http://www.ws.binghamton.edu/fridrich/Research/EI7254-18.pdf">Large
+                    Scale Test of Sensor
+                    Fingerprint Camera Identification</a></p>
+            <p><a href="./landing.html#section3">Download the App and participate in the study now.</a></p>
+
         </div>
         <div class="mdl-shadow--2dp" style="width: 70%; margin: 20px auto; padding: 20px; background-color: white;">
 
@@ -70,7 +97,7 @@
                 <a href="mailto:dominik.maier@fau.de?Subject=Feedback%20for%20CamFinger">dominik.maier@fau.de</a>
             </p>
 
-            <p>&copy; 2016 &nbsp;&middot;&nbsp; <a href="https://www1.cs.fau.de/" title="Lehrstuhl für Informatik 1"
+            <p>&copy;2016&nbsp;<a href="https://www1.cs.fau.de/" title="Lehrstuhl für Informatik 1"
                                                    target="_blank">Lehrstuhl für Informatik 1</a>&nbsp;&nbsp;&middot;&nbsp;
                 <a href="https://www.fau.eu/" title="Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)">Friedrich-Alexander-Universität
                     Erlangen-Nürnberg (FAU)</a>

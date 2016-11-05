@@ -21,6 +21,8 @@ $(document).ready(function () {
     var $ios = $("#ios");
     var $android = $("#android");
 
+    $bottom.hide();
+
     function showFixedAt(index) {
         $fixeds.hide();
         $($fixeds[index]).show();
@@ -36,9 +38,6 @@ $(document).ready(function () {
     }, 10000);
 
     // handle appstore forwarding
-    $ios.click(navigateToAppStore);
-    $android.click(navigateToPlayStore);
-
     if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
         if (document.referrer) {
             // chrome on android does not allow forwarding to an app straight from user input.
