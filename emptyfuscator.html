@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<head>
+  <title>emptyfuscator - obfuscate JS to invisibility</title>
+  <meta name="description" content="emptyfuscator - obfuscate JS to invisibility">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <style>
+       
+    body {
+      padding: 20px;
+    }
+    
+    body, * {
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.4em;
+    }
+    
+    h1 {
+      font-size: 2em;
+      position: absolute;
+      top: 70px;
+      font-weight: normal;
+      left: 140px;
+    }
+    
+    h2 {
+      width: 90px;
+      text-align: right;
+      padding: 50px 5px 5px;
+      background: rgb(243, 248, 248);
+      font-size: 20px;
+      line-height: 1em;
+    }
+    
+    h3 {
+      font-weight: bold;
+    }
+        
+    p, li, textarea, .actions {
+      width: 100%;
+      max-width: 600px;
+    }
+    
+    textarea {
+      display: block;
+      height: 200px;
+      margin: 1em 0;
+    }
+    
+    .actions a {
+      float: right;
+    }
+    
+    .actions {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1>emptyfuscator</h1>
+  
+  <h2></h2>
+  
+  <p>If you fear espionage through cameras, look no furhter than emptyfuscator. 
+    Make your code invisible.
+  </p>
+  <p>It works by encoding the code with <a href="https://www.fileformat.info/info/unicode/char/3164/index.htm">Hangul Filler (U+3164)</a> and <a href="https://www.fileformat.info/info/unicode/char/1160/index.htm">HANGUL JUNGSEONG FILLER (U+1160)</a>.
+  </p>
+  <p>
+      This also (partly) works in other languages with unicode support, such as <a href="http://thehumbleprogrammer.com/his-majesty-hangul-the-filler/">C#</a> and <a href="https://twitter.com/domenuk/status/1292967217999609856">Python 3</a>.
+  </p>
+ 
+  <p>Use the form below to convert your own script.</p>
+
+  <input id="input" type="text" value="alert(1)"/> 
+  <button id="encode" type="text">Encode</button>
+  
+  <div class="checkbox">
+    <input id="eval" type="checkbox" checked />
+  </div>
+  
+  <textarea id="output"></textarea>
+  <div class="actions">
+    <span id="stats">…</span>
+    <a id="run" href="#">Run This</a>
+  </div>
+
+ <p>The complete thing is based off of Martin Kleppe's twitter ideas <a href="https://twitter.com/aemkei/status/1292930469886074881">@aemkei</a> and this page is a clone of <a href="http://www.jsfuck.com/">jsfuck.com</a>.</p>
+<p>Made with <3 by <a href="https://twitter.com/domenuk">@domenukk</a>.</p>
+  
+<script>
+// We just do simple toBinary and replace 0 with hangulFiller, 1 with hangulJungseongFiller
+const hf = 'ﾠ'
+const hjf = 'ᅠ'
+
+function emptyfuscate(js) {
+  // UTF-8 to binary, 
+  // see https://stackoverflow.com/questions/14430633/how-to-convert-text-to-binary-code-in-javascript
+  s = unescape( encodeURIComponent( js ) );
+  var chr, i = 0, l = s.length, out = '';
+  for( ; i < l; i ++ ){
+      chr = s.charCodeAt( i ).toString( 2 );
+      while( chr.length % 8 != 0 ){ chr = '0' + chr; }
+      out += chr;
+  }
+  out = out.replace(/0/g, hf).replace(/1/g, hjf);
+
+  // Add the stub to de-emtyfuscate automatically.
+  // This will de-emptyfuscate, then eval().
+  // basically calls eval(binToUtf8(...)) from SO in the proxy has() lookup.
+  return `${hf}=new Proxy({},{has(${hf}${hf}${hf},${hjf}${hf}){let ${hf}${hf},${hjf}='';for(let ${hf}=0;${hf}<${hjf}${hf}.length;${hf}+=8){${hf}${hf}=parseInt(${hjf}${hf}.substr(${hf},8).replace(/${hf}/g,0).replace(/${hjf}/g,1),2).toString(16);${hjf}+='%'+((${hf}${hf}.length%2==0)?${hf}${hf}:'0'+${hf}${hf})}${hjf}=decodeURIComponent(${hjf});console.log(${hjf});eval(${hjf});return ${hf}}})
+
+with(${hf}){
+/* The actual code is here: /
+${out}
+}`
+
+}
+
+function $(id){
+  return document.getElementById(id);
+}
+
+function encode(){
+  var output = emptyfuscate($("input").value);
+  $("output").value = output;
+  $("stats").innerHTML = output.length + " chars";
+}
+
+$("encode").onclick = encode;
+
+$("run").onclick = function(){
+    eval($("output").value);
+    return false;
+};
+
+encode();
+</script>
+</body>
+</html>
