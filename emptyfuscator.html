@@ -106,12 +106,10 @@ function emptyfuscate(js) {
   // Add the stub to de-emtyfuscate automatically.
   // This will de-emptyfuscate, then eval().
   // basically calls eval(binToUtf8(...)) from SO in the proxy has() lookup.
-  return `${hf}=new Proxy({},{has(${hf}${hf}${hf},${hjf}${hf}){let ${hf}${hf},${hjf}='';for(let ${hf}=0;${hf}<${hjf}${hf}.length;${hf}+=8){${hf}${hf}=parseInt(${hjf}${hf}.substr(${hf},8).replace(/${hf}/g,0).replace(/${hjf}/g,1),2).toString(16);${hjf}+='%'+((${hf}${hf}.length%2==0)?${hf}${hf}:'0'+${hf}${hf})}${hjf}=decodeURIComponent(${hjf});console.log(${hjf});eval(${hjf});return ${hf}}})
+  return `${hf}=new Proxy({},{has(${hf}${hf}${hf},${hjf}${hf}){let ${hf}${hf},${hjf}='';for(let ${hf}=0;${hf}<${hjf}${hf}.length;${hf}+=8){${hf}${hf}=parseInt(${hjf}${hf}.substr(${hf},8).replace(/${hf}/g,0).replace(/${hjf}/g,1),2).toString(16);${hjf}+='%'+((${hf}${hf}.length%2==0)?${hf}${hf}:'0'+${hf}${hf})}${hjf}=decodeURIComponent(${hjf});console.log(${hjf});eval(${hjf});return ${hf}}});with(${hf})
 
-with(${hf}){
 /* The actual code is here: */
-${out}
-}`
+${out}`
 
 }
 
