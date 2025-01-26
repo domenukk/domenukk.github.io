@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1737922039|2794772380';
+const CACHE_VERSION = '1737922333|21613222';
 /** @type {string} */
 const CACHE_PREFIX = 'BobaPop-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
@@ -17,7 +17,7 @@ const ENSURE_CROSSORIGIN_ISOLATION_HEADERS = true;
 const CACHED_FILES = ["BobaPop.html","BobaPop.js","BobaPop.offline.html","BobaPop.icon.png","BobaPop.apple-touch-icon.png","BobaPop.worker.js","BobaPop.audio.worklet.js"];
 // Files that we might not want the user to preload, and will only be cached on first load.
 /** @type {string[]} */
-const CACHABLE_FILES = ["BobaPop.wasm","BobaPop.pck","BobaPop.side.wasm","libgdsion.web.template_release.wasm32.wasm"];
+const CACHABLE_FILES = ["BobaPop.wasm","BobaPop.pck","BobaPop.side.wasm","libgdsion.web.template_debug.wasm32.wasm"];
 const FULL_CACHE = CACHED_FILES.concat(CACHABLE_FILES);
 
 self.addEventListener('install', (event) => {
