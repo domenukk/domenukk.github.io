@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7irpjafbhk3j"
-path="res://.godot/imported/BobaPop.512x512.png-2f1f93935792f338e273826bcd716ace.ctex"
+uid="uid://bpf32g36325s8"
+path="res://.godot/imported/BobaPop.512x512.png-efeb31a4e99f363c443c9d9fe4616275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://exports/BobaPop.512x512.png"
-dest_files=["res://.godot/imported/BobaPop.512x512.png-2f1f93935792f338e273826bcd716ace.ctex"]
+source_file="res://exports/web/BobaPop.512x512.png"
+dest_files=["res://.godot/imported/BobaPop.512x512.png-efeb31a4e99f363c443c9d9fe4616275.ctex"]
 
 [params]
 
